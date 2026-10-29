@@ -452,7 +452,7 @@ h1,h2,h3,p{margin:0}
 .tj .pick{opacity:0}
 .journey.tmj.p0 .tj .pick{animation:riIn .4s ease 1.2s both}
 
-/* Task Manager application: denser, form-based, older desktop idiom */
+/* Task Manager application: denser, form-based desktop idiom */
 .tma{display:grid;grid-template-rows:28px 1fr;height:100%;font-size:14px}
 .tmmenu{display:flex;gap:20px;align-items:center;padding:0 16px;border-bottom:1px solid var(--rule);font-size:13px;color:var(--body);background:var(--paper)}
 .tmbody{display:grid;grid-template-columns:212px 1fr;min-height:0}
@@ -623,19 +623,19 @@ h1,h2,h3,p{margin:0}
 .bz-sel button{border:0;background:none;height:40px;padding:0 20px;border-radius:20px;font-size:15.5px;color:var(--body);cursor:pointer;transition:background .25s,color .25s}
 .bz-sel button[aria-pressed="true"]{background:var(--biz);color:var(--paper)}
 .bz-sel button.seen{color:var(--ink)}
-.journey.bzj.p3 .bz-sel{visibility:visible;animation:riIn .4s ease .1s both}
+.journey.bzj.p4 .bz-sel{visibility:visible;animation:riIn .4s ease .1s both}
 
 .bz-plat{position:absolute;left:200px;top:80px;width:660px;height:250px;border:1.5px solid var(--biz);border-radius:18px;background:var(--biz-tint);opacity:0;transform:scale(1.22);transform-origin:530px 130px}
 .bz-plat .lbl{position:absolute;left:20px;top:16px;font-size:15px;color:var(--ink);font-weight:500}
 .bz-plat .lbl small{display:block;font-size:13px;color:var(--mute);font-weight:400;margin-top:2px}
-.journey.bzj.p1 .bz-plat{animation:bzZoom .9s cubic-bezier(.2,.7,.2,1) both}
+.journey.bzj.p2 .bz-plat{animation:bzZoom .9s cubic-bezier(.2,.7,.2,1) both}
 @keyframes bzZoom{from{opacity:0;transform:scale(1.22)}to{opacity:1;transform:scale(1)}}
 
-.bz-card{position:absolute;left:330px;top:146px;width:400px;background:var(--paper);border:1px solid var(--ink);border-radius:12px;padding:14px 18px;transform:scale(1.18);transform-origin:center;display:flex;flex-direction:column;gap:5px}
-.journey.bzj.p0 .bz-card{animation:bzIn .5s ease .1s both}
+.bz-card{opacity:0;position:absolute;left:330px;top:146px;width:400px;background:var(--paper);border:1px solid var(--ink);border-radius:12px;padding:14px 18px;transform:scale(1.18);transform-origin:center;display:flex;flex-direction:column;gap:5px}
+.journey.bzj.p1 .bz-card{animation:bzIn .5s ease .1s both}
 @keyframes bzIn{from{opacity:0;transform:scale(1.14)}to{opacity:1;transform:scale(1.18)}}
-.journey.bzj.p1 .bz-card{animation:bzShrink .9s cubic-bezier(.2,.7,.2,1) both}
-@keyframes bzShrink{from{transform:scale(1.18)}to{transform:scale(1)}}
+.journey.bzj.p2 .bz-card{animation:bzShrink .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes bzShrink{from{opacity:1;transform:scale(1.18)}to{opacity:1;transform:scale(1)}}
 .bz-card .t{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute)}
 .bz-card .t .mark{width:14px;height:16px}
 .bz-card b{font-size:17px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
@@ -643,37 +643,55 @@ h1,h2,h3,p{margin:0}
 .bz-card .r i{width:9px;height:9px;border-radius:50%;flex:none}
 .bz-card .r.c i{background:var(--ink)}
 .bz-card .r.h i{background:var(--decide)}
-.journey.bzj.p2 .bz-card .r.c i{animation:bzFlash 1s ease 1.6s both}
+.journey.bzj.p3 .bz-card .r.c i{animation:bzFlash 1s ease 1.6s both}
 @keyframes bzFlash{0%,100%{box-shadow:0 0 0 0 transparent}40%{box-shadow:0 0 0 6px var(--biz-tint)}}
 
 .bz-cl{position:absolute;top:430px;width:140px;height:92px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);padding:12px 14px;opacity:0;overflow:hidden}
 .bz-cl b{display:block;font-size:15px;font-weight:500;color:var(--ink)} .bz-cl small{font-size:13px;color:var(--mute)}
 .bz-cl::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--biz);transform:scaleX(0);transform-origin:left}
-.journey.bzj.p2 .bz-cl:not(.new){animation:riIn .4s ease both;animation-delay:calc(.2s + var(--i)*.1s)}
-.journey.bzj.p2 .bz-line:not(.new):not(.pro){animation:draw .5s ease both;animation-delay:calc(.35s + var(--i)*.1s)}
-.journey.bzj.p2 .bz-pulse:not(.new){animation:bzPulse 1.1s cubic-bezier(.45,0,.3,1) both;animation-delay:calc(1.25s + var(--i)*.05s)}
+.journey.bzj.p3 .bz-cl:not(.new){animation:riIn .4s ease both;animation-delay:calc(.2s + var(--i)*.1s)}
+.journey.bzj.p3 .bz-line:not(.new):not(.pro){animation:draw .5s ease both;animation-delay:calc(.35s + var(--i)*.1s)}
+.journey.bzj.p3 .bz-pulse:not(.new){animation:bzPulse 1.1s cubic-bezier(.45,0,.3,1) both;animation-delay:calc(1.25s + var(--i)*.05s)}
 @keyframes bzPulse{0%{opacity:1;stroke-dashoffset:.07}92%{opacity:1}100%{opacity:0;stroke-dashoffset:-1.05}}
 
+
+/* Fewer round trips: two illustrative review sequences */
+.bz-lanes{position:absolute;inset:0;pointer-events:none}
+.journey.bzj.p1 .bz-lanes{animation:fadeOut .3s ease both}
+.bz-ll{position:absolute;left:50px;font-size:15px;color:var(--body);opacity:0}
+.bz-lp{position:absolute;width:140px;height:48px;border:1px solid var(--rule);border-radius:24px;background:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14.5px;line-height:1.2;color:var(--ink);padding:0 10px;opacity:0}
+.bz-lp.rep{border-style:dashed;border-color:var(--ink)}
+.bz-lp.gu{background:var(--mip-blue);border-color:var(--mip-blue);color:var(--on-mip-blue);font-weight:550}
+.bz-lp.dec{background:var(--decide);border-color:var(--decide);color:var(--on-decide);font-weight:550}
+.bz-lanes svg{position:absolute;inset:0;width:1060px;height:620px;overflow:visible}
+.bz-lanes path{fill:none;stroke:var(--mute);stroke-width:1.5;stroke-dasharray:1;stroke-dashoffset:1}
+.bz-lanes path.loop{stroke:var(--ink)}
+.bz-lanes .lt{font-size:13.5px;fill:var(--body);opacity:0}
+.journey.bzj.p0 .bz-ll{animation:fadeIn .4s ease both;animation-delay:var(--d)}
+.journey.bzj.p0 .bz-lp{animation:riIn .35s ease both;animation-delay:var(--d)}
+.journey.bzj.p0 .bz-lanes path{animation:draw .3s ease both;animation-delay:var(--d)}
+.journey.bzj.p0 .bz-lanes path.loop{animation:draw .6s ease both;animation-delay:var(--d)}
+.journey.bzj.p0 .bz-lanes .lt{animation:fadeIn .4s ease both;animation-delay:var(--d)}
 /* Capacity: room for a new client */
 .bz-cl.new{border:1.5px dashed var(--biz);background:none;display:flex;flex-direction:column;justify-content:center}
 .bz-cl.new b{color:var(--biz)}
-.journey.bzj.p3 .bz-cl.new{animation:riIn .45s ease .5s both}
-.journey.bzj.p3 .bz-line.new{animation:fadeIn .4s ease .35s both}
+.journey.bzj.p4 .bz-cl.new{animation:riIn .45s ease .5s both}
+.journey.bzj.p4 .bz-line.new{animation:fadeIn .4s ease .35s both}
 /* Confidence: every client steady */
-.journey.bzj.p4 .bz-cl:not(.new)::before{animation:grow .45s ease both;animation-delay:calc(.2s + var(--i)*.09s)}
+.journey.bzj.p5 .bz-cl:not(.new)::before{animation:grow .45s ease both;animation-delay:calc(.2s + var(--i)*.09s)}
 .bz-card .r>span{display:inline}
 /* Differentiation: a prospective client, and the way MIP works */
 .bz-pro{position:absolute;left:892px;top:150px;width:150px;height:110px;border:1.5px dashed var(--biz);border-radius:10px;padding:12px 14px;opacity:0}
 .bz-pro b{display:block;font-size:15px;font-weight:500;color:var(--biz)} .bz-pro small{font-size:13px;color:var(--mute)}
 .bz-badge{position:absolute;right:18px;top:16px;display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 13px;border-radius:15px;background:var(--paper);border:1px solid var(--ink);font-size:13.5px;color:var(--ink);opacity:0}
 .bz-badge i{width:8px;height:8px;border-radius:50%;background:var(--decide)}
-.journey.bzj.p5 .bz-pro{animation:riIn .45s ease .5s both}
-.journey.bzj.p5 .bz-line.pro{animation:fadeIn .4s ease .35s both}
-.journey.bzj.p5 .bz-badge{animation:riIn .4s ease .15s both}
+.journey.bzj.p6 .bz-pro{animation:riIn .45s ease .5s both}
+.journey.bzj.p6 .bz-line.pro{animation:fadeIn .4s ease .35s both}
+.journey.bzj.p6 .bz-badge{animation:riIn .4s ease .15s both}
 
 .bz-foot{position:absolute;left:50px;right:20px;top:548px;font-size:13px;color:var(--mute);opacity:0}
-.journey.bzj.p1 .bz-foot{animation:fadeIn .4s ease .6s both}
-.journey.bzj.p6 .bz-sel button{color:var(--ink)}
+.journey.bzj.p2 .bz-foot{animation:fadeIn .4s ease .6s both}
+.journey.bzj.p7 .bz-sel button{color:var(--ink)}
 
 
 /* ================= GearUp × MIP theme (iteration 6) =================
@@ -699,8 +717,8 @@ h1,h2,h3,p{margin:0}
 .jstrip button.decide.now{border-top-color:var(--decide)}
 .jstrip .bd i.on{background:var(--mip-blue)}
 
-/* Scene 1 colour key: AI prepares (Cobalt Blue chip) beside a person decides (yellow chip) */
-.flow .st:first-child{background:var(--mip-blue);border-color:var(--mip-blue);color:var(--on-mip-blue);font-weight:550}
+/* Overview colour key: developer asks (neutral), AI prepares (Cobalt Blue), a person decides (yellow) */
+.flow .st.ai{background:var(--mip-blue);border-color:var(--mip-blue);color:var(--on-mip-blue);font-weight:550}
 
 /* GearUp-authored surfaces carry a Cobalt Blue bar */
 .gpanel,.cmt,.ccompact,.tcard,.hrec,.chrow .chn:first-child{box-shadow:inset 0 3px 0 var(--mip-blue)}
@@ -740,9 +758,9 @@ h1,h2,h3,p{margin:0}
 .bz-card .r.c i{background:var(--link)}
 .bz-card .r.f{display:none}
 .bz-card .r.f i{background:var(--ink)}
-.journey.bzj.p4 .bz-card .r.f{display:flex;animation:riIn .4s ease .6s both}
+.journey.bzj.p5 .bz-card .r.f{display:flex;animation:riIn .4s ease .6s both}
 .bz-clabel{position:absolute;left:50px;top:530px;font-size:13.5px;color:var(--body);opacity:0}
-.journey.bzj.p2 .bz-clabel{animation:fadeIn .4s ease .9s both}
+.journey.bzj.p3 .bz-clabel{animation:fadeIn .4s ease .9s both}
 .bz-foot{top:556px}
 
 /* Task Manager severity explainer: the same selected state */
@@ -753,6 +771,13 @@ h1,h2,h3,p{margin:0}
 /* Costs: selected period uses the same selected state as the commercial pathways */
 .seg button[aria-pressed="true"]{background:var(--mip-blue);color:var(--on-mip-blue)}
 
+
+/* Reviewer-time illustration (iteration 11) */
+.rt{background:var(--surface);border-radius:14px;padding:26px 30px;align-self:start}
+.rt-row{display:flex;align-items:center;gap:14px;font-size:19px;color:var(--ink);margin-top:10px}
+.rt-row input{width:120px;height:48px;border-radius:10px;border:1px solid var(--rule);background:var(--paper);padding:0 14px;font-size:22px;text-align:right;font-variant-numeric:tabular-nums}
+.rt .result{font-size:60px}
+.rt .presets{margin-top:16px}
 
 /* Cost explorer (iteration 8): one card, two implementations, the same three bands */
 .cx{display:flex;flex-direction:column;flex:1;margin-top:28px;min-height:0}
@@ -1025,7 +1050,7 @@ const TM_BEATS = [
   notes:["Example described by Karl: preference maintenance, an indicator in a search-results table. Separate from the GitLab example.","Ticket key, wording and description are placeholders until Karl’s ticket arrives."]},
  {app:"tm", tab:"details", cap:"Task Manager creates a linked task.", sub:"Each Jira ticket the developer takes on has a matching Task Manager task.", tags:["karl","illus","slots"],
   explore:[["tmabout","About these screens"]],
-  notes:["The Jira link pulses to carry the ticket forward.","Task Manager is drawn as an older, form-based desktop tool. It is not a copy of the real interface."]},
+  notes:["The Jira link pulses to carry the ticket forward.","Task Manager is drawn as a form-based desktop tool. It is not a copy of the real interface."]},
  {app:"tm", tab:"wip", cap:"The work happens in a WIP.", sub:"A work-in-progress area on the central development server, edited remotely or in Task Manager’s own AppBuilder.", tags:["karl","illus","slots"],
   explore:[["tmabout","About these screens"]],
   notes:["Editor options are Karl’s description. Which one his example used is unknown.","File rows are skeletons until Karl’s WIP file list arrives."]},
@@ -1034,7 +1059,7 @@ const TM_BEATS = [
   notes:["Skeleton comparison. Set TM_EVIDENCE.wip.compareImage to show Karl’s screenshot instead."]},
  {app:"tm", tab:"wip", cap:"When it’s tested, the developer asks for review in Teams.", sub:"A pre-reviewer and a co-owner normally review before final approval.", tags:["karl","illus"],
   explore:[["karl","What’s still needed from Karl"]],
-  notes:["Message wording is reconstructed. Whether this request starts GearUp’s review is not yet confirmed; the next phase doesn’t claim it."]},
+  notes:["Message wording is reconstructed. Per Karl, developers ask for GearUp’s review through Teams when they choose. Audited configuration routes Teams review commands for Task Manager tickets to Devin; a successful run hasn’t been observed."]},
  {app:"prep", cap:"GearUp starts with the task.", sub:"Devin reads what the Jira ticket asks for.", tags:["karl","dia","time"],
   explore:[["tmhow","How the two implementations differ"]],
   notes:["Task Manager’s GearUp uses Devin, not the GitLab model stack.","Present each input one at a time. Nothing auto-advances."]},
@@ -1197,48 +1222,66 @@ Object.assign(TAG, {
   impl:["rec", "Implemented: GearUp prepares review findings before people approve a change"],
   hypo:["", "Illustrative: platform and clients are hypothetical"],
   pot:["", "Potential benefit, not yet measured"],
+  seq:["", "Illustrative sequence, not measured"],
   fut:["", "Future: needs validated evidence before any client-facing claim"]
 });
 const BIZ_CLIENTS = [["Client A","Healthcare"],["Client B","Insurance"],["Client C","Lending"],["Client D","Healthcare"],["Client E","Insurance"]];
 const BIZ_SCRIPT = [
-  "We’ve just seen GearUp help a reviewer catch a potential issue before a change is approved. That’s the immediate benefit: better-prepared reviews.",
+  "Today, a change can go back and forth over small things: formatting, standards, a missing comment. Each round trip means waiting, an interruption and context to rebuild. When a developer asks GearUp first, they can fix those issues, and learn from them, before the senior review.",
+  "That’s the immediate benefit: better-prepared reviews, before a change is approved.",
   "But much of what MIP builds is shared. Our core policy administration platforms serve many clients, and that’s where our revenue sits.",
-  "When a change to a shared platform is deployed, it can reach every client using it, including any issue it carries. Finding an issue before approval gives the team the chance to fix it first. That’s how one better review can have a wider impact.",
-  "First, capacity. Less repetitive review and rework could free engineers for new client implementations, without overhead growing at the same rate.",
-  "Second, confidence. Issues found before approval, and fixed by the team, could mean fewer avoidable disruptions to our clients’ operations.",
-  "Third, differentiation. A structured, human-accountable way of using AI in engineering could strengthen how we compete for new clients, once we’ve validated it.",
-  "So GearUp doesn’t need to be a product we sell. Its value could come from making what we already sell more reliable and easier to scale. That’s why it’s worth exploring, and measuring properly."
+  "When a shared change is deployed, it can reach every client using it, including any issue it carries. Finding an issue before approval gives the team the chance to fix it first.",
+  "First, capacity. Fewer round trips could free engineers for requested features and client implementations.",
+  "Second, confidence. Issues fixed before release could mean fewer disruptions for our clients.",
+  "Third, differentiation. A human-accountable way of using AI in engineering could strengthen how we compete for new clients, once we’ve validated it.",
+  "So GearUp doesn’t need to be a product we sell. Its value could come from helping MIP deliver client work faster and more reliably. That’s why it’s worth a measured pilot."
 ];
 const BIZ_EXPLORE = [["qa","Executive questions"],["script","Presenter script"]];
 const BIZ_BEATS = [
+ {cap:"Fewer round trips.", sub:"Small issues found early can be fixed before the senior review, not after it.", tags:["seq","pot"], explore:BIZ_EXPLORE},
  {cap:"One better review.", sub:"GearUp helps a person catch a potential issue before a change is approved.", tags:["impl"], explore:BIZ_EXPLORE},
  {cap:"Much of what MIP builds is shared.", sub:"Core policy administration platforms serve many clients at once.", tags:["hypo","impl"], explore:BIZ_EXPLORE},
  {cap:"A wider impact.", sub:"When a shared change is deployed, it can reach every client using that platform. An issue found before approval can be fixed before that happens.", tags:["hypo"], explore:BIZ_EXPLORE},
- {path:"Capacity", cap:"Capacity to grow.", sub:"Less repetitive review and rework could free engineers for new client implementations and requested features.", tags:["pot","hypo"], explore:BIZ_EXPLORE},
+ {path:"Capacity", cap:"Capacity to grow.", sub:"Fewer round trips and less rework could free engineers for requested features and client implementations.", tags:["pot","hypo"], explore:BIZ_EXPLORE},
  {path:"Confidence", cap:"Confidence in delivery.", sub:"Issues found before approval, and fixed by the team, could mean fewer avoidable disruptions to client operations.", tags:["pot","hypo"], explore:BIZ_EXPLORE},
  {path:"Differentiation", cap:"A stronger proposition.", sub:"A structured, human-accountable way of using AI in engineering could strengthen how MIP competes for new clients, once its benefits are validated.", tags:["fut","hypo"], explore:BIZ_EXPLORE},
- {cap:"An internal tool. A commercial advantage.", sub:"GearUp doesn’t need to be sold. Its value could come from making what MIP already sells more reliable and easier to scale.", tags:["pot","fut"], explore:[...BIZ_EXPLORE,["evidence","Evidence behind this"]]}
+ {cap:"An internal tool. A commercial advantage.", sub:"GearUp doesn’t need to be sold. Earlier feedback and fewer round trips could help MIP deliver client work faster and more reliably.", tags:["pot","fut"], explore:[...BIZ_EXPLORE,["evidence","Evidence behind this"]]}
 ];
 const BIZ_CAVEATS = [
-  ["Implemented: in the GitLab synthetic tests GearUp raised concerns before human approval; Task Manager’s equivalent is per Karl, with output still awaited."],
+  ["Illustrative sequence built from the team’s description, not measured. Benefits: earlier feedback for junior developers, less repeated senior review, fewer interruptions.","GearUp doesn’t replace the senior review or fix issues itself."],
+  ["Implemented: in GitLab synthetic tests GearUp raised concerns before human approval. Task Manager’s equivalent is per Karl; output still awaited."],
   ["Hypothetical platform. Business context relayed from Jady’s manager: core platforms are priced per policy or member, and MIP uses shared and white-labelled software."],
   ["The pulse is illustrative. No real MIP platform, client count or incident is shown.","Reach is conditional on the shared change being deployed to those clients.","GearUp finds; people fix. Avoid “prevents defects”."],
   ["Potential, not measured. No engineering hours saved are claimed."],
   ["Potential, not measured. No defect-rate or client-disruption figures exist.","The card now separates the finding (GearUp) from the fix (the team)."],
   ["Future opportunity. Needs validated pilot evidence before it is used with prospective clients.","“AI prepares. Humans decide.” remains candidate wording (C17)."],
-  ["Next: costs, shown separately. Then what we’ll measure.","Aim for 60–90 seconds across this whole sequence."]
+  ["Next: costs, then what we’ll measure.","About 80 seconds for the whole sequence."]
 ];
 BIZ_BEATS.forEach((b,i)=>{ b.notes=[`Say: “${BIZ_SCRIPT[i]}”`, ...BIZ_CAVEATS[i]]; });
 
 function bizHTML(){
   const W=140, X=i=>50+i*164, cx=i=>X(i)+70, sx=i=>530+(cx(i)-530)*0.35;
   const path=i=>`M${sx(i).toFixed(1)},330 C${sx(i).toFixed(1)},382 ${cx(i)},378 ${cx(i)},430`;
+  const LX=i=>50+i*164, A=["Change submitted","Senior review","Returned for a minor issue","Fixed","Reviewed again","Final decision"], Bl=["Change ready","GearUp feedback","Developer fixes","Senior review","Final decision"];
+  const pill=(txt,i,y,d,cls)=>`<div class="bz-lp ${cls||""}" style="left:${LX(i)}px;top:${y}px;--d:${d}s">${txt}</div>`;
+  const joins=(n,y,d0)=>Array.from({length:n-1},(_,i)=>`<path pathLength="1" style="--d:${(d0+i*.18+.12).toFixed(2)}s" d="M${LX(i)+140},${y+24} L${LX(i+1)},${y+24}"/>`).join("");
+  const lanes = `<div class="bz-lanes" aria-label="Illustrative review sequences, with and without early feedback">
+      <svg aria-hidden="true"><defs><marker id="bzarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor" style="stroke:none;stroke-dasharray:none;stroke-dashoffset:0;animation:none"/></marker></defs>
+        ${joins(6,150,.2)}${joins(5,390,1.9)}
+        <path class="loop" pathLength="1" style="--d:1.3s;color:var(--ink)" marker-end="url(#bzarr)" d="M${LX(4)+70},150 C${LX(4)+70},86 ${LX(1)+70},86 ${LX(1)+70},144"/>
+        <text class="lt" x="530" y="80" text-anchor="middle" style="--d:1.5s">Round trip for a minor issue</text></svg>
+      <p class="bz-ll" style="top:112px;--d:.05s">Without early feedback</p>
+      ${A.map((x,i)=>pill(x,i,150,(.15+i*.18).toFixed(2),i===2||i===4?"rep":i===5?"dec":"")).join("")}
+      <p class="bz-ll" style="top:352px;--d:1.75s">When the developer asks GearUp first</p>
+      ${Bl.map((x,i)=>pill(x,i,390,(1.85+i*.18).toFixed(2),i===1?"gu":i===4?"dec":"")).join("")}
+    </div>`;
   const lines = BIZ_CLIENTS.map((_,i)=>`<path class="bz-line" style="--i:${i}" pathLength="1" d="${path(i)}"/><path class="bz-pulse" style="--i:${i}" pathLength="1" d="${path(i)}"/>`).join("")
     + `<path class="bz-line new" pathLength="1" d="${path(5)}"/><path class="bz-line pro" pathLength="1" d="M860,205 L892,205"/>`;
   return `<div class="journey bzj" data-jr="biz" data-beat="-1">
    <div class="jbody">
     <div class="narr"><div class="capwrap" id="capwrap"></div><div class="legend" id="legend"></div><div class="explore" id="explore"></div></div>
     <div class="bz-field" aria-label="Illustrative example: one change on a shared platform used by several hypothetical clients">
+      ${lanes}
       <svg aria-hidden="true">${lines}</svg>
       <div class="bz-sel" role="group" aria-label="Commercial pathways">${BIZ_BEATS.map((b,i)=>b.path?`<button data-bzpath="${i}" aria-pressed="false">${b.path}</button>`:"").join("")}</div>
       <div class="bz-plat"><span class="lbl">Shared platform<small>e.g. policy administration, hypothetical</small></span><span class="bz-badge"><i></i>AI prepares. People decide.</span></div>
@@ -1258,7 +1301,7 @@ function bizOnBeat(j, B, k){
   j.querySelectorAll(".bz-sel button").forEach(b=>{ const i=+b.dataset.bzpath; b.setAttribute("aria-pressed", i===k); b.classList.toggle("seen", i<k); });
 }
 
-const state = { costView:"gitlab", volEdited:false, tmSev:null, s:0, k:0, decision:null, reason:"", reasonRecorded:"", volume:167, period:"month", drawer:null, notes:false, keys:false, paused:false, nudged:false, played:new Set() };
+const state = { rtReviews:2000, rtMinutes:15, costView:"gitlab", volEdited:false, tmSev:null, s:0, k:0, decision:null, reason:"", reasonRecorded:"", volume:167, period:"month", drawer:null, notes:false, keys:false, paused:false, nudged:false, played:new Set() };
 
 /* ---------- Scenes ---------- */
 const scenes = [
@@ -1275,20 +1318,21 @@ const scenes = [
      render:()=>`<div class="view"><div class="statement">
        <p class="h1">Reviewing a proposed software change means understanding two things: the work, and what it’s meant to do.</p>
        <p class="lead">GearUp has AI prepare that evidence, so people arrive better informed. The decision stays with them.</p></div></div>` },
-   { notes:["Reach wording is owner-supplied and qualitative (U03). Bars are deliberately unlabelled, not measured adoption.",
-            "Separate implementations; nothing here implies shared infrastructure.",
-            "Tool names (Devin, Claude, n8n) stay in Evidence, not the main story."],
-     render:()=>`<div class="view"><p class="h1">Two engineering environments. One human‑centred initiative.</p>
+   { notes:["GitLab and Task Manager are separate implementations with one purpose. Nothing here implies shared infrastructure.",
+            "Reach is the owner’s qualitative description (U03). The bars are not measured adoption.",
+            "Reviews are requested by developers, through Teams today. Jira status or tag triggers are possible future options, not built.",
+            "Task Manager feedback destinations (Karl mentioned Teams and Jira) are still being confirmed, so the card doesn’t name them."],
+     render:()=>`<div class="view"><p class="h1">One review approach. Two environments.</p>
        <div class="envs">
         <div class="env"><span class="who">Presented by Jady</span><p class="h2">GitLab</p>
-          <p class="body">Prepares evidence for each proposed change and shares the result in Teams, where people already work.</p>
+          <p class="body">Reviews merge requests against their Jira requirements. Findings can appear on the merge request, and Teams is where developers ask for reviews and hear back.</p>
           <p class="reach"><span class="reach-bar" style="width:72px"></span>A smaller part of MIP</p></div>
-        <div class="env"><span class="who">Presented by Karl</span><p class="h2">Task Manager</p>
-          <p class="body">Its own implementation, built for an older engineering environment.</p>
+        <div class="env"><span class="who">Presented by Karl</span><p class="h2">Task Manager <span class="k" style="font-size:22px;font-weight:400">CVS</span></p>
+          <p class="body">Reviews Task Manager tasks and their WIP files with Devin, using the Jira task for context.</p>
           <p class="reach"><span class="reach-bar" style="width:220px"></span>A much larger part of MIP</p></div>
        </div>
-       <div class="flow"><span class="st">AI prepares</span><span class="ln"></span><span class="st">Concerns to assess</span><span class="ln"></span><span class="st decide">A person decides</span>
-       <span class="note small">The shared purpose. Each implementation works its own way.</span></div></div>` }
+       <div class="flow"><span class="st">Developer asks</span><span class="ln"></span><span class="st ai">AI prepares</span><span class="ln"></span><span class="st decide">A person decides</span>
+       <span class="note small">Developers request a review when it’s useful, through Teams today. Starting reviews from Jira status changes or tags is a possible future option. <button class="linkbtn" style="font-size:15px" data-drawer="tmhow">How the two compare</button></span></div></div>` }
  ]},
  { id:"gitlab", name:"GitLab", presenter:"Jady", disclosure:"replay", journey:true, steps:BEATS },
  { id:"tm", name:"Task Manager", presenter:"Karl", disclosure:"tm", steps:[
@@ -1303,17 +1347,11 @@ const scenes = [
    ...BIZ_BEATS,
    { notes:["Two implementations, one explorer. Never a blended cost per review.","GitLab: illustrative API processing from one preliminary example; methodology and current-rate estimates are in Evidence. 167 a month and 2,000 a year are independent scenarios (167 × 12 = 2,004).","Switching month or year loads its example only until the volume is edited; after that, custom volumes are kept.","Task Manager: Karl’s initial evidence. About 100 reviews is theoretical capacity within his personal daily quota, not production throughput. No money figure is derived from the quota."],
      render:()=>costExplorerHTML() },
-   { notes:["Measures follow section 06’s pilot plan. Jira-triggered automation is a possible future step only (U07)."],
-     render:()=>`<div class="view"><p class="h1" style="font-size:52px">What we’ll measure next.</p>
-       <div class="measure"><ul class="mlist">
-         <li>Hands-on review time, with and without GearUp</li>
-         <li>How often people accept or reject a concern</li>
-         <li>Concerns that turn out to be wrong</li>
-         <li>Full cost of each completed review</li></ul>
-       <div class="future"><span class="status" style="margin:0"><i></i>Possible future step, not built</span>
-         <p class="h3">Start preparing automatically when a task changes</p>
-         <p class="body">Today, GearUp reads the task when a review runs. Starting from the task itself is an idea to explore.</p></div>
-       </div></div>` },
+   { notes:["The pilot measures what the illustration assumes. Section 06’s plan, plus review round trips from Karl’s feedback.",
+            "Reviewer time is arithmetic only: reviews × minutes ÷ 60. 2,000 × 15 minutes = 500 hours. It assumes every review saves that much, before validation effort and other costs.",
+            "15 minutes is Karl’s estimate for one example (a thorough manual review of about an hour). It isn’t an average or a minimum. Zero is a valid scenario.",
+            "Today developers request reviews through Teams. Jira status or tag triggers are a possible future option (U07)."],
+     render:()=>measureHTML(), after:()=>syncRT() },
    { notes:["Closing repeat of the mark’s lift. Candidate message, not approved."],
      render:()=>`<div class="view"><div class="close">${MARK("",true)}
        <p class="display">AI prepares.<br>Humans decide.</p><p class="lead" style="color:var(--mute)">GearUp. The Human Software Company.</p></div></div>` }
@@ -1584,10 +1622,11 @@ const DRAWERS = {
     <p>GearUp didn’t send this message. Run 203 didn’t exercise Teams delivery, and Teams rendering was never observed. The layout is Teams-inspired, without Microsoft branding.</p>
     <h4>Changed from iteration 1</h4><p>The earlier card came from a separate delivery test (run 206), so its counts didn’t match. It’s no longer used. Run 206 remains evidence that 8 synthetic delivery-fallback combinations passed (C08).</p>`}),
   qa:()=>({title:"Executive questions", html:`
-    <h4>“How does this actually help us win new business?”</h4><p>Not directly, and we shouldn’t claim it does yet. MIP’s core platforms earn revenue per policy or member, and they’re shared across clients. If better-prepared reviews free engineering capacity and catch issues earlier, we could take on more client implementations and show a more dependable delivery record when competing for new clients. Both depend on measuring the effect first.</p>
-    <h4>“Is this simply an internal productivity tool?”</h4><p>Today its immediate benefit is operational, yes. The commercial case is about what that productivity is spent on. On shared platforms, each improvement reaches many clients, so stronger engineering capability is a client-facing asset, not only an internal saving.</p>
-    <h4>“What evidence would we need before claiming commercial impact?”</h4><p>A measured pilot on shared-platform changes: hands-on review time with and without GearUp; how often findings are accepted, rejected or wrong; issues caught before release compared with those found after; rework; lead time for client-requested changes; and full cost per completed review. Only with those results would we connect GearUp to capacity, client outcomes or anything we say to prospective clients.</p>
-    <h4>“Why is it worth exploring further?”</h4><p>Both implementations already exist and run today. The preliminary model-processing example for one GitLab review is about 1.5 US cents, which is not a total cost. And on shared platforms, any genuine improvement is multiplied across clients. That combination makes a careful pilot a reasonable next step, not a commitment.</p>`}),
+    <h4>“How does this help us win new business?”</h4><p>Not directly, and we don’t claim it does. Our core platforms are shared across clients and priced per policy or member. If earlier feedback reduces rework and review round trips, teams have more time for requested features and client implementations, and can deliver them more reliably. That’s what could strengthen our position with new clients, once measured.</p>
+    <h4>“Is this just an internal productivity tool?”</h4><p>Its first benefit is internal: fewer round trips and less repeated review. The commercial case is what that time is spent on. On shared platforms, an improvement reaches many clients.</p>
+    <h4>“Does it replace the senior reviewer?”</h4><p>No. Developers ask for it when it helps. It points out issues; people decide and fix them.</p>
+    <h4>“What evidence would we need before claiming impact?”</h4><p>A measured pilot: hands-on review time with and without GearUp, how often changes go back for minor issues, findings accepted or wrong, issues found before and after release, lead time for client requests, and full cost per review.</p>
+    <h4>“Why is it worth exploring?”</h4><p>Both implementations exist, the model-processing cost per GitLab review is small in the one example we have, and improvements on shared platforms reach many clients. A measured pilot is a reasonable next step.</p>`}),
   script:()=>({title:"Presenter script, about 75 seconds", html:`<p class="k" style="font-size:14px">One line per step. Press Space to move on.</p>${BIZ_SCRIPT.map((s,i)=>`<h4>${i+1}. ${esc(BIZ_BEATS[i].cap)}</h4><p>${esc(s)}</p>`).join("")}`}),
   karl:()=>({title:"What’s still needed from Karl", html:`
     <h4>Now described by Karl</h4><ul>${TMX.karl.workflow.map(w=>`<li>${esc(w)}</li>`).join("")}<li>Devin reviews the Jira description, the WIP’s original and changed files, and configured review rules</li><li>Up to ${TMX.karl.findingTarget} high-priority findings, rated critical, medium or low; the change is also summarised and recorded</li><li>Example: ${esc(TMX.karl.example)}</li></ul>
@@ -1598,24 +1637,27 @@ const DRAWERS = {
     <li>The configured review rules, or their categories</li>
     <li>Devin’s actual output for the example: outcome, up to five findings with severity and location, and the change summary</li>
     <li>How the review appears in Task Manager (screenshot), and the recorded run time</li>
-    <li>How the pre-reviewer, co-owner and final reviewer use the findings</li><li>A recorded history view of an older task</li>
+    <li>How the pre-reviewer, co-owner and final reviewer use the findings</li><li>Where feedback is delivered (Karl mentioned Teams and Jira)</li><li>A recorded history view of an earlier task</li>
     <li>Expenses and how they’re billed; reach or usage evidence; deployment; failure behaviour</li>
     <li>How the inspected Task Manager dispatch definitions relate to this implementation</li></ul>
     <h4>Where it goes</h4><p>Everything above maps to one data object in the page, <span class="code">TM_EVIDENCE</span>. Each empty field shows as a dashed “Awaiting Karl” box and is replaced automatically when filled.</p>`}),
   tmabout:()=>({title:"About these screens", html:`
-    <p>The Jira ticket, Task Manager windows and Teams message are reconstructed from Karl’s verbal description. They are not screenshots and don’t copy Task Manager’s real interface. It is drawn as an older, form-based desktop tool to suggest its environment.</p>
+    <p>The Jira ticket, Task Manager windows and Teams message are reconstructed from Karl’s verbal description. They are not screenshots and don’t copy Task Manager’s real interface.</p>
     <h4>What is from Karl</h4><p>The sequence of work (ticket, linked task, WIP on the central development server, Teams request, reviewers), what Devin reads, the severity levels, the outcome rule and the example’s subject.</p>
     <h4>What is placeholder</h4><p>Grey bars and dashed boxes. File rows, code comparison, findings, outcome and summary are deliberately empty so nothing reads as a real Devin result.</p>
     <h4>Severity explainer</h4><p>The buttons explain the rule as Karl reports it. They don’t show a result, and the rule isn’t verified as automatic enforcement of approval or merge.</p>`}),
-  tmhow:()=>({title:"How the two implementations differ", html:`
-    <p>Same purpose, separate implementations. Nothing here implies shared infrastructure.</p>
+  tmhow:()=>({title:"How the two implementations compare", html:`
+    <p>One purpose, two separate implementations. This is an evidence map, not a ranking. Nothing implies shared infrastructure.</p>
     <table><tr><th></th><th>GitLab (Jady)</th><th>Task Manager (Karl)</th></tr>
-    <tr><td>Environment</td><td>GitLab merge requests</td><td>Older, non-Git environment; WIP on a central development server</td></tr>
-    <tr><td>AI</td><td>Claude Haiku via OpenRouter, with a second-opinion model</td><td>Devin</td></tr>
-    <tr><td>Reads</td><td>Changed code and Jira requirements</td><td>Jira description, original and changed WIP files, configured review rules</td></tr>
-    <tr><td>Output</td><td>Concerns tied to requirements; Teams summary</td><td>Up to five findings rated critical, medium or low; recorded change summary</td></tr>
-    <tr><td>Evidence here</td><td>Synthetic run 203, offline replay</td><td>Karl’s description; review output awaited</td></tr></table>
-    <h4>Timing</h4><p>${esc(TMX.karl.timing)} This is Karl’s observation, not a benchmark, and isn’t comparable to the GitLab synthetic run times.</p>`}),
+    <tr><td>Environment</td><td>Merge requests in GitLab</td><td>CVS, with Task Manager tasks and WIP files on a central development server</td></tr>
+    <tr><td>Review engine</td><td>Model pipeline via OpenRouter (Claude Haiku), plus a second-opinion model</td><td>Devin</td></tr>
+    <tr><td>Reads</td><td>Changed code and the Jira requirements</td><td>Jira task, original and changed WIP files, configured review rules</td></tr>
+    <tr><td>Output</td><td>Requirement-linked concerns; can appear on the merge request; Teams summary</td><td>Up to five findings rated critical, medium or low, and a change summary. Destinations being confirmed.</td></tr>
+    <tr><td>How it starts</td><td colspan="2">A developer asks, through Teams. Audited configuration routes Task Manager tickets to Devin and other tickets to the GitLab pipeline. Configuration only: neither route’s live execution was observed in the audit.</td></tr>
+    <tr><td>Evidence here</td><td>Synthetic run 203, replayed offline</td><td>Karl’s description and initial usage; review output awaited</td></tr></table>
+    <h4>Cost</h4><p>Each engine is priced differently, so the same workload shouldn’t be assumed to cost the same. The pipeline has a preliminary per-review example; Devin’s subscription cost and cost per review are awaiting verification.</p>
+    <h4>Open points from the audit</h4><p>An inspected Devin session definition didn’t include the Jira context as explicit review criteria, so requirement handling may differ from what Karl described. To confirm with him.</p>
+    <h4>Timing</h4><p>${esc(TMX.karl.timing)} Karl’s observation, not a benchmark.</p>`}),
   method:()=>({title:"How the GitLab figure is calculated", html:methodHtml()}),
   tmcost:()=>({title:"Task Manager usage evidence", html:tmCostHtml()}),
   evidence:()=>({title:"Evidence for this scene", html:evidenceFor(scenes[state.s].id)})
@@ -1647,24 +1689,46 @@ function methodHtml(){
 }
 function bizEvidence(){ return `<h4>Commercial impact: what each part is</h4>
   <dl><dt>Implemented</dt><dd>GearUp prepares review findings before people approve a change. GitLab: observed in synthetic run 203. Task Manager: as Karl describes; output still awaited.</dd>
+  <dt>Illustrative sequence</dt><dd>The two review lanes in “Fewer round trips”, built from the team’s description of a typical junior-to-senior review. Not measured.</dd>
   <dt>Illustrative</dt><dd>The shared platform, the five clients and their sectors, the new client and the prospective client. Hypothetical, not a real deployment, client list or incident.</dd>
-  <dt>Potential benefits</dt><dd>Capacity for new client work; fewer avoidable client disruptions; growth without overhead rising at the same rate. None measured.</dd>
+  <dt>Potential benefits</dt><dd>Earlier feedback, less repeated review, fewer interruptions, more capacity for client work and fewer issues reaching release. None measured.</dd>
   <dt>Future opportunity</dt><dd>Using a validated, human-accountable AI review process as part of MIP’s delivery proposition.</dd></dl>
   <h4>Business context (relayed from Jady’s manager, not independently verified)</h4><ul>
   <li>Many core policy administration platforms (healthcare, lending, insurance administration) are priced per policy or member, not per developer hour.</li>
   <li>MIP uses shared and white-labelled software extensively. Larger clients often drive priorities, and improvements to shared platforms can benefit other clients.</li>
   <li>Some smaller teams, including mobile applications, work on fixed monthly fees. Not emphasised here.</li></ul>
-  <h4>Not claimed</h4><p>No client counts, defect rates, hours saved, revenue growth, churn reduction, testimonials, contract values or guaranteed defect prevention. Efficiency doesn’t automatically produce revenue.</p>
+  <h4>Not claimed</h4><p>No client counts, defect rates, hours saved, revenue growth, testimonials or contract values. GearUp doesn’t guarantee better software, fix issues itself or outperform human reviewers. Efficiency doesn’t automatically produce revenue.</p>
   <h4>Colour</h4><p>Cobalt Blue (#2154E2) and Pulse (#7DFBC6) are MIP’s official values from the Brand Guidelines 2026, v01.4. Cobalt Blue marks GearUp’s intelligence, progress and selected states, as fills in both themes and as lines only on light surfaces. Pulse marks connected and completed information on dark surfaces. GearUp’s yellow is reserved for human decisions and never touches Cobalt Blue. No MIP logo, typeface or gradient is used.</p>`; }
+function rtHours(){ return Math.round(Math.max(0,state.rtReviews||0)*Math.max(0,state.rtMinutes||0)/60); }
+function syncRT(){ const o=$("rtOut"); if(o) o.innerHTML=`${rtHours().toLocaleString("en-GB")}<small>reviewer hours a year</small>`; }
+function measureHTML(){
+  return `<div class="view"><p class="h1" style="font-size:52px">What we’ll measure next.</p>
+   <div class="measure">
+    <div><ul class="mlist">
+      <li>Hands-on review time, with and without GearUp</li>
+      <li>How often changes go back for minor issues</li>
+      <li>Findings people accept, reject or find wrong</li>
+      <li>Full cost of each completed review</li></ul>
+     <p class="small" style="margin-top:22px;max-width:60ch">Today developers request reviews through Teams. Starting reviews from a Jira status change or tag is a possible future option, not built.</p></div>
+    <div class="rt"><span class="status" style="margin:0"><i></i>Illustrative scenario, not measured</span>
+      <p class="h3" style="margin:8px 0 18px">Reviewer time, illustrated</p>
+      <div class="rt-row"><input id="rtrev" type="number" min="0" max="1000000" step="1" value="${state.rtReviews}" aria-label="Reviews a year">reviews a year</div>
+      <div class="rt-row"><input id="rtmin" type="number" min="0" max="240" step="1" value="${state.rtMinutes}" aria-label="Minutes saved per review">minutes saved per review</div>
+      <p class="result" id="rtOut" style="margin:22px 0 10px"></p>
+      <p class="small">Only if every review saved that much, before validation effort and other costs. 15 minutes is Karl’s estimate for one example that takes about an hour to review thoroughly.</p>
+      <div class="presets"><button class="ctl" data-rtmin="0">No saving</button><button class="ctl" data-rtmin="15">Karl’s example, 15 min</button></div>
+    </div>
+   </div></div>`;
+}
 function costExplorerHTML(){
   const U=TMX.karl.usage, cap=Math.round(1/U.quotaShare), v=state.costView;
   return `<div class="view"><p class="h1" style="font-size:52px">Costs, shown separately.</p>
    <div class="cx" data-view="${v}">
-    <div class="cx-switch"><span class="cx-lbl" id="cxlbl">Implementation</span>
-      <span class="seg" role="group" aria-labelledby="cxlbl"><button data-cview="gitlab" aria-pressed="${v==="gitlab"}">GitLab</button><button data-cview="tm" aria-pressed="${v==="tm"}">Task Manager</button></span></div>
+    <div class="cx-switch"><span class="cx-lbl" id="cxlbl">Review engine</span>
+      <span class="seg" role="group" aria-labelledby="cxlbl"><button data-cview="gitlab" aria-pressed="${v==="gitlab"}">Model pipeline</button><button data-cview="tm" aria-pressed="${v==="tm"}">Devin</button></span></div>
     <div class="cx-card">
-     <section class="cx-panel cx-gitlab" aria-label="GitLab costs" ${v==="gitlab"?"":"inert"}>
-      <div class="cx-head"><span class="label">GitLab</span><p class="h3">Illustrative API processing cost</p></div>
+     <section class="cx-panel cx-gitlab" aria-label="Model pipeline costs" ${v==="gitlab"?"":"inert"}>
+      <div class="cx-head"><span class="label">Model pipeline via OpenRouter, used by GitLab</span><p class="h3">Illustrative model-processing cost</p></div>
       <div class="cx-main">
         <div class="cx-left">
           <div class="calc"><input id="vol" type="number" min="0" max="1000000" step="1" value="${state.volume}" aria-label="Number of reviews">reviews a
@@ -1673,12 +1737,12 @@ function costExplorerHTML(){
           <p class="small cx-custom" id="cxcustom" ${state.volEdited?"":"hidden"}>Custom volume kept when you switch period. Choose an example to reset.</p>
         </div>
         <div class="cx-right"><p class="result" id="costOut">${costText()}</p>
-          <p class="small">API processing only, at about 1.5 US cents per review. Preliminary example supplied by the team, not a verified average.</p></div>
+          <p class="small">Model processing only, at about 1.5 US cents per review across the review stages. One preliminary example, not a verified average.</p></div>
       </div>
-      <p class="small excl">Not total operating cost. Not included: retries, routing, hosting, maintenance, taxes. <button class="linkbtn" style="font-size:15px" data-drawer="method">How this is calculated</button></p>
+      <p class="small excl">Not total operating cost. Not included: retries, routing, hosting, maintenance, taxes. <button class="linkbtn" style="font-size:15px" data-drawer="method">How this is calculated</button> <button class="linkbtn" style="font-size:15px;margin-left:12px" data-drawer="tmhow">How the two compare</button></p>
      </section>
-     <section class="cx-panel cx-tm" aria-label="Task Manager usage" ${v==="tm"?"":"inert"}>
-      <div class="cx-head"><span class="label">Task Manager</span><p class="h3">Devin usage, from Karl’s initial evidence</p></div>
+     <section class="cx-panel cx-tm" aria-label="Devin usage" ${v==="tm"?"":"inert"}>
+      <div class="cx-head"><span class="label">Devin, used by Task Manager</span><p class="h3">Usage, from Karl’s initial evidence</p></div>
       <div class="cx-main">
         <div class="cx-left"><div class="cx-tiles">
           <div class="cx-tile"><b>${esc(U.sizeClass)}</b><span>Size class of Karl’s example</span></div>
@@ -1687,7 +1751,7 @@ function costExplorerHTML(){
         <div class="cx-right"><p class="result">≈ ${cap}<small>reviews a day, in theory</small></p>
           <p class="small">Similarly sized reviews that would fit within that daily quota: 1 ÷ ${Math.round(U.quotaShare*100)}%. Not a verified production throughput.</p></div>
       </div>
-      <p class="small excl">Subscription cost and cost per review are not yet verified, and aren’t calculated from the quota. Possible future improvement, not implemented: developer-associated Devin sessions to manage usage. <button class="linkbtn" style="font-size:15px" data-drawer="tmcost">About this evidence</button></p>
+      <p class="small excl">Subscription cost and cost per review: awaiting verification, and not calculated from the quota. Possible future improvement, not built: developer-associated Devin sessions to manage usage. <button class="linkbtn" style="font-size:15px" data-drawer="tmcost">About this evidence</button> <button class="linkbtn" style="font-size:15px;margin-left:12px" data-drawer="tmhow">How the two compare</button></p>
      </section>
     </div>
    </div></div>`;
@@ -1702,11 +1766,11 @@ function evidenceFor(id){
   if(id==="value") return (scenes[state.s].steps[state.k].jr==="biz" ? bizEvidence() : "")+methodHtml()+tmCostHtml()+`<h4>Benefits</h4><p>C14 and C15 are potential benefits only. No hours saved, adoption or quality improvement has been measured.</p>`;
   if(id==="tm") return `<h4>Disclosure</h4><p>Reconstructed workflow. No Task Manager review output, screenshots or code have been supplied yet, and nothing here is connected to Devin, Teams or Task Manager.</p>
     <h4>Described first-hand by Karl (not independently audited)</h4><ul>${TMX.karl.workflow.map(w=>`<li>${esc(w)}</li>`).join("")}<li>${esc(TMX.karl.outcomeRule)} Not verified as automatic enforcement of approval or merge.</li><li>${esc(TMX.karl.timing)}</li></ul>
-    <h4>Owner-supplied context</h4><p>A separate implementation in an older, non-Git environment using Devin, serving a substantially larger part of MIP (U01–U03). No headcount, adoption or review volume is established.</p>
+    <h4>Owner-supplied context</h4><p>A separate implementation for CVS and Task Manager using Devin, serving a substantially larger part of MIP (U01–U03). No headcount, adoption or review volume is established.</p>
     <h4>Potential value, as Karl describes it</h4><p>Less time on routine issues such as whitespace, indentation, spelling and coding standards; earlier, actionable feedback; maintained code quality; review comments and context preserved; easier return to older tasks. None of these is measured.</p>
     <h4>Not yet established</h4><ul><li>Devin’s actual findings for the example</li><li>Costs and billing basis (the configured 5 ACU session limit is not a price)</li><li>How the inspected dispatch definitions (C16) relate to this implementation</li></ul>
     <p>GitLab fixtures are never relabelled as Task Manager evidence.</p>`;
-  return `<h4>Owner-supplied context</h4><ul><li>Two distinct implementations: GitLab (Jady) and Task Manager (Karl, using Devin) — U01, U02.</li><li>Task Manager serves a substantially larger portion of MIP — qualitative, no headcount or volume (U03).</li><li>Teams is the primary GitLab interface (U04).</li></ul>
+  return `<h4>Owner-supplied context</h4><ul><li>Two implementations: GitLab (Jady) and Task Manager on CVS (Karl, using Devin). U01, U02.</li><li>Task Manager serves a substantially larger part of MIP. Qualitative; no headcount or volume (U03).</li><li>Teams is the everyday interface for requests and notifications (U04).</li><li>Reviews are developer-requested, not mandatory for every change. Jira status or tag triggers are a possible future option.</li></ul>
   <h4>Deployment</h4><p>Live GearUp workflows run on the company’s Mac mini. Inactive workflows in the audit were personal-Mac copies, not evidence of downtime (C18).</p>
   <h4>Wording status</h4><p>“AI prepares. Humans decide.” is a candidate message, not approved (C17).</p>`;
 }
@@ -1768,7 +1832,7 @@ function render(prevS, prevK){
   $("presenter").textContent = "";
   const dis=$("disclosure");
   dis.className="disclosure"+(sc.disclosure==="replay"?" replay":"");
-  dis.innerHTML = sc.disclosure==="replay" ? `<i></i>Offline replay of synthetic evidence` : sc.disclosure==="tm" ? `<i></i>Reconstructed workflow. Review results awaiting Karl’s evidence` : st.jr==="biz" ? `<i></i>Illustrative example. Hypothetical platform and clients` : `<i></i>Offline prototype. No live connections`;
+  dis.innerHTML = sc.disclosure==="replay" ? `<i></i>Offline replay of synthetic evidence` : sc.disclosure==="tm" ? `<i></i>Reconstructed workflow. Review results awaiting Karl’s evidence` : st===BIZ_BEATS[0] ? `<i></i>Illustrative sequence. Not measured` : st.jr==="biz" ? `<i></i>Illustrative example. Hypothetical platform and clients` : `<i></i>Offline prototype. No live connections`;
   const dots=$("dots"), jr=st.jr?JOURNEYS[st.jr]:null;
   if(jr){
     if(!dots.querySelector(".transport")) dots.innerHTML = `<div class="transport"><button class="ctl" data-tp="replay" title="Replay this step (R)">Replay</button><button class="ctl" data-tp="pause" aria-pressed="false" title="Pause or resume (P)">Pause</button><button class="ctl" data-tp="skip" title="Skip to the end of this step (S)">Skip</button></div>`;
@@ -1810,7 +1874,7 @@ function prev(){
 $("stage").addEventListener("click",e=>{
   /* After a mouse click, release button focus so Space keeps advancing the presentation. */
   const btn=e.target.closest("button"); if(btn && e.detail>0 && btn.id!=="dclose") setTimeout(()=>{ if(document.activeElement===btn) btn.blur(); },0);
-  const t=e.target.closest("[data-scene],[data-phase],[data-sev],[data-bzpath],[data-tp],[data-teams],[data-dec],[data-chip],[data-record],[data-edit-reason],[data-drawer],[data-period],[data-preset],[data-cview]"); if(!t) return;
+  const t=e.target.closest("[data-scene],[data-phase],[data-sev],[data-bzpath],[data-tp],[data-teams],[data-dec],[data-chip],[data-record],[data-edit-reason],[data-drawer],[data-period],[data-preset],[data-cview],[data-rtmin]"); if(!t) return;
   if(t.dataset.scene) go(+t.dataset.scene,0);
   else if(t.dataset.phase){ const jr=JOURNEYS[scenes[state.s].steps[state.k].jr]; go(state.s, jr.offset + jr.phases[+t.dataset.phase].beats[0]); }
   else if(t.dataset.sev){ state.tmSev=t.dataset.sev; renderSev(); }
@@ -1826,12 +1890,15 @@ $("stage").addEventListener("click",e=>{
   else if(t.dataset.period){ state.period=t.dataset.period;
     if(!state.volEdited){ state.volume = state.period==="month" ? 167 : 2000; const v=$("vol"); if(v) v.value=state.volume; }
     syncCalc(); }
+  else if(t.dataset.rtmin!==undefined){ state.rtMinutes=+t.dataset.rtmin; const m=$("rtmin"); if(m) m.value=state.rtMinutes; syncRT(); }
   else if(t.dataset.cview){ state.costView=t.dataset.cview; const cx=document.querySelector(".cx"); if(cx){ cx.dataset.view=state.costView;
       cx.querySelectorAll("[data-cview]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.cview===state.costView));
       cx.querySelectorAll(".cx-panel").forEach(p=>{ const on=p.classList.contains("cx-"+state.costView); p.inert=!on; if(on) p.removeAttribute("inert"); else p.setAttribute("inert",""); }); } }
   else if(t.dataset.preset){ const [v,p]=t.dataset.preset.split(","); state.volume=+v; state.period=p; state.volEdited=false; const vi=$("vol"); if(vi) vi.value=state.volume; syncCalc(); }
 });
 $("stage").addEventListener("input",e=>{
+  if(e.target.id==="rtrev"){ state.rtReviews=Math.min(1e6,Math.max(0,Math.floor(+e.target.value||0))); syncRT(); }
+  if(e.target.id==="rtmin"){ state.rtMinutes=Math.min(240,Math.max(0,Math.floor(+e.target.value||0))); syncRT(); }
   if(e.target.id==="vol"){ state.volume=Math.min(1e6,Math.max(0,Math.floor(+e.target.value||0))); state.volEdited=true; syncCalc(); }
   if(e.target.id==="reason"){ state.reason=e.target.value; const b=document.querySelector("[data-record]"); if(b) b.disabled=!state.reason.trim(); }
 });
